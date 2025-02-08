@@ -58,7 +58,7 @@ fn fix_line(t: &str) -> String {
     let mut words: Vec<String> = vec![];
     for word in t.split_whitespace() {
         words.push(match f64::from_str(word) {
-            Ok(v) if word.contains("e") => format!("{:.}", v),
+            Ok(v) if word.contains("e") => format!("{}", v),
             _ => String::from(word),
         });
     }
